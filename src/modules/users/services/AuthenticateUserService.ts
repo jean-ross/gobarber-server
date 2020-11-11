@@ -51,6 +51,10 @@ class AuthenticateUserService {
       expiresIn,
     });
 
+    if (user.avatar === null) {
+      user.avatar = 'avatar_placeholder.png';
+    }
+
     return {
       user,
       token,
